@@ -2,21 +2,30 @@
 
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
 import { injected } from 'wagmi/connectors';
+import { useUserRegistration } from '@/hooks/useUserRegistration';
 
-export function ConnectWallet() {
+export default function ConnectWallet() {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
+  const { isRegistered, loading } = useUserRegistration();
 
   if (isConnected) {
     return (
       <div className="flex items-center gap-4">
-        <span className="text-sm">
-          Connected: {address?.slice(0, 6)}...{address?.slice(-4)}
-        </span>
+        <div className="text-right">
+          <span className="text-sm block">
+            {address?.slice(0, 6)}...{address?.slice(-4)}
+          </span>
+          {loading ? (
+            <span className="text-xs text-yellow-500">Registering...</span>
+          ) : isRegistered ? (
+            <span className="text-xs text-green-500">Registered ✓</span>
+          ) : null}
+        </div>
         <button
           onClick={() => disconnect()}
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm"
         >
           Disconnect
         </button>
