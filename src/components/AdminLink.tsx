@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 // Simple check if the connected wallet is the admin
 // Replace with your actual wallet address
-const ADMIN_WALLET = '0xYourAdminWalletAddress';
+const ADMIN_WALLET = '0x3E69B19870534af98F52b6Db1f547801D3b5567c';
 
 export default function AdminLink() {
   const { address } = useAccount();
