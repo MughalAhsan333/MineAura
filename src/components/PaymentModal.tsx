@@ -21,7 +21,7 @@ export default function PaymentModal({ miner, onClose }: PaymentModalProps) {
   const [paymentProof, setPaymentProof] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const walletAddress = "0xYourWalletAddressHere"; // You need to put your actual USDT wallet address
+  const walletAddress = "0x3E69B19870534af98F52b6Db1f547801D3b5567c"; // You need to put your actual USDT wallet address
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
