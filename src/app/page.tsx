@@ -1,4 +1,5 @@
 import ConnectWallet from '@/components/ConnectWallet';
+import AdminLink from '@/components/AdminLink';
 import Link from 'next/link';
 import { useAccount } from 'wagmi';
 
@@ -9,7 +10,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <h1 className="text-4xl font-bold">MineAura</h1>
-        <ConnectWallet />
+        <div className="flex items-center gap-4">
+          <AdminLink />
+          <ConnectWallet />
+        </div>
       </div>
 
       <div className="relative flex place-items-center">
