@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAccount } from 'wagmi';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../lib/supabase';
 
 export function useUserRegistration() {
   const { address, isConnected } = useAccount();
