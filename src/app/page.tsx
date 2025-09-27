@@ -1,6 +1,10 @@
 import ConnectWallet from '@/components/ConnectWallet';
+import Link from 'next/link';
+import { useAccount } from 'wagmi';
 
 export default function Home() {
+  const { isConnected } = useAccount();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -16,6 +20,16 @@ export default function Home() {
           <p className="text-xl mb-8">
             Join MineAura today. Earn points through referrals, invest in miners, and climb the ranks to unlock your potential.
           </p>
+          {isConnected ? (
+            <Link 
+              href="/dashboard"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg inline-block"
+            >
+              Go to Dashboard →
+            </Link>
+          ) : (
+            <p className="text-gray-500">Connect your wallet to get started</p>
+          )}
         </div>
       </div>
     </main>
