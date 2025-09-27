@@ -1,4 +1,4 @@
-import { ConnectWallet } from '@/components/ConnectWallet';
+import ConnectWallet from '@/components/ConnectWallet';
 
 export default function Home() {
   return (
@@ -16,9 +16,6 @@ export default function Home() {
           <p className="text-xl mb-8">
             Join MineAura today. Earn points through referrals, invest in miners, and climb the ranks to unlock your potential.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
-            Connect Wallet & Get Started
-          </button>
         </div>
       </div>
     </main>
