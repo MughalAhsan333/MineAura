@@ -3,7 +3,7 @@
 import { useAccount } from 'wagmi';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../lib/supabase';
 import MinerShop from '@/components/MinerShop';
 
 interface User {
