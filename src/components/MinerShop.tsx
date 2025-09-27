@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { useAccount } from 'wagmi';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../../lib/supabase';
+import PaymentModal from './PaymentModal';
 
 interface Miner {
   id: number;
